@@ -1,0 +1,99 @@
+
+
+<html>
+    <head>
+        <title>Form</title>
+        <style>
+            input[type=text], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            input[type=submit] {
+                width: 100%;
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+            div {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+            body { 
+            font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Form</h3>
+        <div>
+            <form onsubmit="return validateForm()" method="post">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="fullname" placeholder="Your name..">
+                <label for="natid">National ID</label>
+                <input type="text" id="natid" name="nationalid" placeholder="Your National ID..">
+                <label for="birthdate">Birth Date</label>
+                <input type="date" id="birthdate" name="birthdate" placeholder="Your Birth Date..">
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" name="mobilenumber" placeholder="Your mobile number..">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email address..">
+                <label for="period">Period</label>
+                <select id="period" name="period">
+                    <option value="day">Day</option>
+                    <option value="week">Week</option>
+                    <option value="month">Month</option>
+                </select>
+                <label for="captcha">Captcha</label>
+                <input type="text" id="captcha" name="captcha" placeholder="Type here..">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <script>
+            function validateForm() {
+                var x = document.forms["myForm"]["fullname"].value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
+                var y = document.forms["myForm"]["nationalid"].value;
+                if (y == "") {
+                    alert("National ID must be filled out");
+                    return false;
+                }
+                var z = document.forms["myForm"]["birthdate"].value;
+                if (z == "") {
+                    alert("Birth Date must be filled out");
+                    return false;
+                }
+                var a = document.forms["myForm"]["mobilenumber"].value;
+                if (a == "") {
+                    alert("Mobile Number must be filled out");
+                    return false;
+                }
+                var b = document.forms["myForm"]["email"].value;
+                if (b == "") {
+                    alert("Email must be filled out");
+                    return false;
+                }
+                var c = document.forms["myForm"]["captcha"].value;
+                if (c == "" || c != "captcha") {
+                    alert("Captcha must be filled out correctly");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
